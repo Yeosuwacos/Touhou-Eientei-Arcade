@@ -2,5 +2,48 @@
 
 [ext_resource type="Script" uid="uid://dmjedsjbit5x7" path="res://scenes/main_menu/main_menu.gd" id="1_isws5"]
 
-[node name="Node2D" type="Node2D" unique_id=1275494763]
+[node name="MainMenu" type="Control" unique_id=704440038]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_isws5")
+
+[node name="BG" type="ColorRect" parent="." unique_id=58585630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8116456, 0.61018264, 0.6287175, 1)
+
+[node name="Txt_Title" type="Label" parent="." unique_id=1984505590]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_right = 55.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Eientei Arcade"
+
+[node name="Btn_Start" type="Button" parent="." unique_id=808753984]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[connection signal="pressed" from="Btn_Start" to="." method="_on_btn_start_pressed"]
