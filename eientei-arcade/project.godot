@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="uid://c484di7tx4t8k"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*uid://dronbgovbpqma"
+GameManager="*uid://m1r7amik75nx"
+SceneTransition="*uid://b6eiv6cy5vu65"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [physics]
 
