@@ -10,6 +10,7 @@ const INTERVAL = 1.2
 var score := 0
 var misses := 0
 var time = DURATION
+var playing = true
 
 #Objects
 @onready var chara = $Char_Catcher
@@ -18,7 +19,7 @@ var time = DURATION
 @onready var container = $BambooContainer
 @onready var score_label = $HUD/Txt_Score
 @onready var lives_label = $HUD/Txt_Lives
-@onready var time_label = $HUD/Ctrl_Display/Txt_Time
+@onready var time_label = $HUD/Txt_Time
 
 
 func _ready():
@@ -52,7 +53,7 @@ func _process(delta: float):
 func _on_t_spawner_timeout():
 	var bamboo = BAMBOO.instantiate()
 	container.add_child(bamboo)
-	bamboo.position.x = randf_range(50,get_window().size.x - 50)
+	bamboo.position.x = randf_range(150 ,get_window().size.x - 150)
 	bamboo.position.y = -50
 	bamboo.caught.connect(_on_bamboo_caught)
 	bamboo.missed.connect(_on_bamboo_missed)
@@ -72,6 +73,7 @@ func _on_bamboo_missed():
 
 #Game end and tickets
 func finish_game():
+	set_process(false)
 	spawner.stop()
 	gametime.stop()
 	for bamboo in container.get_children():

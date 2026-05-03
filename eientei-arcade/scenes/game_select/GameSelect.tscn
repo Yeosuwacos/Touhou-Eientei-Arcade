@@ -98,7 +98,7 @@ path = "res://scenes/minigames/mochi/Mochi.tscn"
 
 [node name="LunarTaiko" parent="Ctrl_GameList" unique_id=347576213 instance=ExtResource("2_c2cf1")]
 layout_mode = 2
-game_name = "LunarTaiko"
+game_name = "Lunar taiko"
 thumbnail = ExtResource("3_ctrha")
 path = "res://scenes/minigames/moon/Moon.tscn"
 

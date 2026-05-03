@@ -33,20 +33,27 @@ wait_time = 60.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1330729640]
 
+[node name="Txt_Time" type="Label" parent="HUD" unique_id=713697370]
+offset_top = 8.0
+offset_right = 1.0
+offset_bottom = 31.0
+
 [node name="Txt_Score" type="Label" parent="HUD" unique_id=1597530003]
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 23.0
+grow_horizontal = 2
 
 [node name="Txt_Lives" type="Label" parent="HUD" unique_id=693716538]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 23.0
-
-[node name="Ctrl_Display" type="HBoxContainer" parent="HUD" unique_id=1361574138]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Txt_Time" type="Label" parent="HUD/Ctrl_Display" unique_id=713697370]
-layout_mode = 2
+grow_horizontal = 0
 
 [node name="BambooContainer" type="Node2D" parent="." unique_id=343382484]
 
