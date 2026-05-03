@@ -1,6 +1,109 @@
 [gd_scene format=3 uid="uid://ebq7l1d36cwq"]
 
 [ext_resource type="Script" uid="uid://bgyalgcjjicua" path="res://scenes/game_select/game_select.gd" id="1_mykot"]
+[ext_resource type="PackedScene" uid="uid://dmuamubfl8p87" path="res://scenes/game_select/game_card/game_card.tscn" id="2_c2cf1"]
+[ext_resource type="Texture2D" uid="uid://bv0wpp2ahx00t" path="res://assets/sprites/ui/game_covers/placeholder.png" id="3_ctrha"]
 
-[node name="Node2D" type="Node2D" unique_id=1131236459]
+[node name="GameSelect" type="Control" unique_id=374389993]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mykot")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1717262199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[node name="Ctrl_Header" type="HBoxContainer" parent="." unique_id=1663157780]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Txt_Title" type="Label" parent="Ctrl_Header" unique_id=446837633]
+layout_mode = 2
+text = "Eientei Arcade"
+
+[node name="Ctrl_TicketDisplay" type="HBoxContainer" parent="Ctrl_Header" unique_id=1794559508]
+layout_mode = 2
+
+[node name="Txt_Counter" type="Label" parent="Ctrl_Header/Ctrl_TicketDisplay" unique_id=372499671]
+layout_mode = 2
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Header/Ctrl_TicketDisplay" unique_id=689163655]
+layout_mode = 2
+
+[node name="Ctrl_GameList" type="GridContainer" parent="." unique_id=315772522]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="BambooCatcher" parent="Ctrl_GameList" unique_id=93363172 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Bamboo catcher"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/catcher/Catcher.tscn"
+
+[node name="ShellGame" parent="Ctrl_GameList" unique_id=459998036 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Shell game"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/cups/Cups.tscn"
+
+[node name="Bunnyhop" parent="Ctrl_GameList" unique_id=1782638885 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Bunnyhop"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/hop/Hop.tscn"
+
+[node name="Maze" parent="Ctrl_GameList" unique_id=787137659 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Maze"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/maze/Maze.tscn"
+
+[node name="MemoryMatch" parent="Ctrl_GameList" unique_id=1435924969 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Memory match"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/memory/Memory.tscn"
+
+[node name="MochiToss" parent="Ctrl_GameList" unique_id=559277540 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Mochi toss"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/mochi/Mochi.tscn"
+
+[node name="LunarTaiko" parent="Ctrl_GameList" unique_id=347576213 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "LunarTaiko"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/moon/Moon.tscn"
+
+[node name="LuckyBunny" parent="Ctrl_GameList" unique_id=2105895407 instance=ExtResource("2_c2cf1")]
+layout_mode = 2
+game_name = "Lucky bunny"
+thumbnail = ExtResource("3_ctrha")
+path = "res://scenes/minigames/slots/Slots.tscn"

@@ -1,11 +1,17 @@
-extends Node2D
+extends MinigameBase
 
+#Game constants
+const BAMBOO = preload("res://scenes/minigames/catcher/Bamboo/bamboo.tscn")
+const DURATION = 60.0
+const LIVES = 5
+const INTERVAL = 1.2
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+#Variables
+var score := 0
+var misses := 0
+var time = DURATION
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#Objects
+@onready var chara = $Char_Catcher
+@onready var spawner = $T_Spawner
+@onready var gametime = $T_Game

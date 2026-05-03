@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dmuamubfl8p87"]
+
+[ext_resource type="Script" uid="uid://cjuo20rqy55wp" path="res://scenes/game_select/game_card/game_card.gd" id="1_sdxh7"]
+
+[node name="GameCard" type="PanelContainer" unique_id=93363172]
+custom_minimum_size = Vector2(240, 280)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -150.0
+offset_right = 140.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sdxh7")
+
+[node name="Ctrl_BG" type="NinePatchRect" parent="." unique_id=1007282259]
+layout_mode = 2
+
+[node name="Ctrl_Content" type="VBoxContainer" parent="." unique_id=325280236]
+layout_mode = 2
+
+[node name="Thumbnail" type="TextureRect" parent="Ctrl_Content" unique_id=1607636839]
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Txt_Name" type="Label" parent="Ctrl_Content" unique_id=978540908]
+layout_mode = 2
+
+[node name="Ctrl_Reward" type="HBoxContainer" parent="Ctrl_Content" unique_id=1472229251]
+layout_mode = 2
+
+[node name="Txt_Winnings" type="Label" parent="Ctrl_Content/Ctrl_Reward" unique_id=1783836961]
+layout_mode = 2
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Content/Ctrl_Reward" unique_id=1709173128]
+layout_mode = 2
+
+[node name="Ctrl_WIP" type="Control" parent="." unique_id=388930780]
+visible = false
+layout_mode = 2
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_WIP" unique_id=1240892033]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

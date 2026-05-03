@@ -2,5 +2,38 @@
 
 [ext_resource type="Script" uid="uid://f2cbij2i1i03" path="res://scenes/minigames/catcher/catcher.gd" id="1_533uj"]
 
-[node name="Node2D" type="Node2D" unique_id=1496124140]
+[node name="Catcher" type="Node2D" unique_id=1496124140]
 script = ExtResource("1_533uj")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1202669055]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[node name="Char_Catcher" type="CharacterBody2D" parent="." unique_id=1533009607]
+
+[node name="Sprite2D" type="Sprite2D" parent="Char_Catcher" unique_id=1675195296]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Char_Catcher" unique_id=32025469]
+
+[node name="T_Spawner" type="Timer" parent="." unique_id=524022780]
+
+[node name="T_Game" type="Timer" parent="." unique_id=1297766794]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1330729640]
+
+[node name="Txt_Score" type="Label" parent="HUD" unique_id=1597530003]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Ctrl_Display" type="HBoxContainer" parent="HUD" unique_id=1361574138]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Txt_Time" type="Label" parent="HUD/Ctrl_Display" unique_id=713697370]
+layout_mode = 2
+
+[node name="BambooContainer" type="Node2D" parent="." unique_id=343382484]
