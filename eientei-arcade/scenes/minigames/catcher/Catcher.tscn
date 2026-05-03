@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvo4cipsvo5n4"]
+
+[ext_resource type="Script" uid="uid://f2cbij2i1i03" path="res://scenes/minigames/catcher/catcher.gd" id="1_533uj"]
+
+[node name="Node2D" type="Node2D" unique_id=1496124140]
+script = ExtResource("1_533uj")

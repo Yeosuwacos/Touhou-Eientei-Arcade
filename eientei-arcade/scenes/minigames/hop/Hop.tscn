@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://citmflo2wqchn"]
+
+[ext_resource type="Script" uid="uid://da1xgf7dg8p0n" path="res://scenes/minigames/hop/hop.gd" id="1_exwd3"]
+
+[node name="Node2D" type="Node2D" unique_id=957429018]
+script = ExtResource("1_exwd3")

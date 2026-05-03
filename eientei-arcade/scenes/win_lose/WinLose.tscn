@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://th10mporjupd"]
+
+[ext_resource type="Script" uid="uid://jnbrl1tx5r63" path="res://scenes/win_lose/win_lose.gd" id="1_0fbcb"]
+
+[node name="Node2D" type="Node2D" unique_id=147960987]
+script = ExtResource("1_0fbcb")
