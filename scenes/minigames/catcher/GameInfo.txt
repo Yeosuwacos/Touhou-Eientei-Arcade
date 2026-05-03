@@ -1,0 +1,1 @@
+Catch falling objects in a basket and avoid negative ones
