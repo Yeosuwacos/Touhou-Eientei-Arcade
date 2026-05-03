@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://cokg6yaai1mr2"]
 
+[ext_resource type="Script" uid="uid://crqed2f7aewjp" path="res://scenes/minigames/catcher/Bamboo/bamboo.gd" id="1_3qyds"]
+[ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_6ew2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qyds"]
+
 [node name="Bamboo" type="Area2D" unique_id=821159691]
+script = ExtResource("1_3qyds")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=26845996]
+texture = ExtResource("2_6ew2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=359138201]
+shape = SubResource("RectangleShape2D_3qyds")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

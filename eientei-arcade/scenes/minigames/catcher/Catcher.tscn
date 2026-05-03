@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dvo4cipsvo5n4"]
 
 [ext_resource type="Script" uid="uid://f2cbij2i1i03" path="res://scenes/minigames/catcher/catcher.gd" id="1_533uj"]
+[ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_hfvev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_533uj"]
 
 [node name="Catcher" type="Node2D" unique_id=1496124140]
 script = ExtResource("1_533uj")
@@ -14,18 +17,27 @@ grow_vertical = 2
 color = Color(0.8117647, 0.6117647, 0.627451, 1)
 
 [node name="Char_Catcher" type="CharacterBody2D" parent="." unique_id=1533009607]
+position = Vector2(640, 640)
 
 [node name="Sprite2D" type="Sprite2D" parent="Char_Catcher" unique_id=1675195296]
+texture = ExtResource("2_hfvev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Char_Catcher" unique_id=32025469]
+shape = SubResource("RectangleShape2D_533uj")
 
 [node name="T_Spawner" type="Timer" parent="." unique_id=524022780]
+wait_time = 1.2
 
 [node name="T_Game" type="Timer" parent="." unique_id=1297766794]
+wait_time = 60.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1330729640]
 
 [node name="Txt_Score" type="Label" parent="HUD" unique_id=1597530003]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Txt_Lives" type="Label" parent="HUD" unique_id=693716538]
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -37,3 +49,5 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="BambooContainer" type="Node2D" parent="." unique_id=343382484]
+
+[connection signal="timeout" from="T_Spawner" to="." method="_on_t_spawner_timeout"]
