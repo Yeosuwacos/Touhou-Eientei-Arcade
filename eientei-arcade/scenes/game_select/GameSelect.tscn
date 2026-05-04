@@ -107,3 +107,19 @@ layout_mode = 2
 game_name = "Lucky bunny"
 thumbnail = ExtResource("3_ctrha")
 path = "res://scenes/minigames/slots/Slots.tscn"
+
+[node name="Btn_Back" type="Button" parent="." unique_id=1268023284]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="Btn_Back" to="." method="_on_btn_back_pressed"]

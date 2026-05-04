@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cdtufocksiy0a"]
+
+[ext_resource type="Script" uid="uid://c040kfj1d0a1r" path="res://scenes/options/options.gd" id="1_k07dm"]
+[ext_resource type="Texture2D" uid="uid://bv0wpp2ahx00t" path="res://assets/sprites/ui/game_covers/placeholder.png" id="1_ps8qi"]
+
+[node name="Options" type="Control" unique_id=639307137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k07dm")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1724126486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8116456, 0.61018264, 0.6287175, 1)
+
+[node name="Txt_Title" type="Label" parent="." unique_id=1907694865]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_right = 55.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Options & Credits"
+
+[node name="Ctrl_Credits" type="VBoxContainer" parent="." unique_id=1253695060]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 20.0
+offset_right = 122.0
+offset_bottom = 528.0
+
+[node name="Ctrl_Yeo" type="VBoxContainer" parent="Ctrl_Credits" unique_id=1114645981]
+layout_mode = 2
+
+[node name="Txt_Name" type="Label" parent="Ctrl_Credits/Ctrl_Yeo" unique_id=990755887]
+layout_mode = 2
+text = "Yeo - Code"
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Credits/Ctrl_Yeo" unique_id=1622522530]
+layout_mode = 2
+texture = ExtResource("1_ps8qi")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Ctrl_Meki" type="VBoxContainer" parent="Ctrl_Credits" unique_id=287766764]
+layout_mode = 2
+
+[node name="Txt_Name" type="Label" parent="Ctrl_Credits/Ctrl_Meki" unique_id=196715231]
+layout_mode = 2
+text = "Meki - Art"
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Credits/Ctrl_Meki" unique_id=1883392154]
+layout_mode = 2
+texture = ExtResource("1_ps8qi")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Ctrl_Myst" type="VBoxContainer" parent="Ctrl_Credits" unique_id=1449736200]
+layout_mode = 2
+
+[node name="Txt_Name" type="Label" parent="Ctrl_Credits/Ctrl_Myst" unique_id=1002867734]
+layout_mode = 2
+text = "Myst - Art"
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Credits/Ctrl_Myst" unique_id=1004840010]
+layout_mode = 2
+texture = ExtResource("1_ps8qi")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Ctrl_Lamp" type="VBoxContainer" parent="Ctrl_Credits" unique_id=719966757]
+layout_mode = 2
+
+[node name="Txt_Name" type="Label" parent="Ctrl_Credits/Ctrl_Lamp" unique_id=59905025]
+layout_mode = 2
+text = "Lamp - Audio"
+
+[node name="Img_Icon" type="TextureRect" parent="Ctrl_Credits/Ctrl_Lamp" unique_id=2064533506]
+layout_mode = 2
+texture = ExtResource("1_ps8qi")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Btn_Back" type="Button" parent="." unique_id=1500363963]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -15.5
+offset_right = 22.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="pressed" from="Btn_Back" to="." method="_on_btn_back_pressed"]
