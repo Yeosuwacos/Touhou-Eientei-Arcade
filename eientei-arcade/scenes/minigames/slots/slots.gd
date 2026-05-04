@@ -12,7 +12,7 @@ var spinning = false
 #Objects
 @onready var spin = $T_Spin
 @onready var reel = $T_Reel
-@onready var bet_label = $HUD/Ctrl_BetAmount/Txt_Bet
+@onready var bet_label = $HUD/Ctrl_BetInterface/Ctrl_BetAmount/Txt_Bet
 @onready var win_label = $HUD/Txt_Winnings
 
 func _ready():
@@ -32,6 +32,10 @@ func _on_btn_lower_pressed():
 	if bet > 0:
 		bet -= 10
 		update_hud()
+
+#Begin rolling
+func _on_btn_roll_pressed():
+	pass #To implement later
 
 #Return to games list
 func _on_btn_back_pressed():

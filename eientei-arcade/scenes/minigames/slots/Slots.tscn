@@ -18,35 +18,44 @@ offset_top = 8.0
 offset_right = 1.0
 offset_bottom = 31.0
 
-[node name="Ctrl_BetAmount" type="HBoxContainer" parent="HUD" unique_id=117570829]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
-offset_right = 114.0
-grow_vertical = 0
-
-[node name="Btn_Lower" type="Button" parent="HUD/Ctrl_BetAmount" unique_id=512134785]
-layout_mode = 2
-text = "Lower"
-
-[node name="Txt_Bet" type="Label" parent="HUD/Ctrl_BetAmount" unique_id=356726]
-layout_mode = 2
-
-[node name="Btn_Raise" type="Button" parent="HUD/Ctrl_BetAmount" unique_id=1657739905]
-layout_mode = 2
-text = "Raise"
-
-[node name="Btn_Back" type="Button" parent="HUD" unique_id=1758183168]
+[node name="Ctrl_BetInterface" type="VBoxContainer" parent="HUD" unique_id=1397315226]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -72.5
+offset_top = -66.0
+offset_right = 72.5
 grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Ctrl_BetAmount" type="HBoxContainer" parent="HUD/Ctrl_BetInterface" unique_id=117570829]
+layout_mode = 2
+
+[node name="Btn_Lower" type="Button" parent="HUD/Ctrl_BetInterface/Ctrl_BetAmount" unique_id=512134785]
+layout_mode = 2
+text = "Lower"
+
+[node name="Txt_Bet" type="Label" parent="HUD/Ctrl_BetInterface/Ctrl_BetAmount" unique_id=356726]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Btn_Raise" type="Button" parent="HUD/Ctrl_BetInterface/Ctrl_BetAmount" unique_id=1657739905]
+layout_mode = 2
+text = "Raise"
+
+[node name="Btn_Roll" type="Button" parent="HUD/Ctrl_BetInterface" unique_id=695162559]
+layout_mode = 2
+text = "Roll!"
+
+[node name="Btn_Back" type="Button" parent="HUD" unique_id=1758183168]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 45.0
 grow_vertical = 0
 text = "Back"
 
@@ -66,6 +75,7 @@ color = Color(0.8117647, 0.6117647, 0.627451, 1)
 visible = false
 z_index = 1
 
-[connection signal="pressed" from="HUD/Ctrl_BetAmount/Btn_Lower" to="." method="_on_btn_lower_pressed"]
-[connection signal="pressed" from="HUD/Ctrl_BetAmount/Btn_Raise" to="." method="_on_btn_raise_pressed"]
+[connection signal="pressed" from="HUD/Ctrl_BetInterface/Ctrl_BetAmount/Btn_Lower" to="." method="_on_btn_lower_pressed"]
+[connection signal="pressed" from="HUD/Ctrl_BetInterface/Ctrl_BetAmount/Btn_Raise" to="." method="_on_btn_raise_pressed"]
+[connection signal="pressed" from="HUD/Ctrl_BetInterface/Btn_Roll" to="." method="_on_btn_roll_pressed"]
 [connection signal="pressed" from="HUD/Btn_Back" to="." method="_on_btn_back_pressed"]
