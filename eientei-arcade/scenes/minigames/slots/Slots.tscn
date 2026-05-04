@@ -19,16 +19,17 @@ offset_right = 1.0
 offset_bottom = 31.0
 
 [node name="Ctrl_BetInterface" type="VBoxContainer" parent="HUD" unique_id=1397315226]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -72.5
-offset_top = -66.0
+offset_top = -33.0
 offset_right = 72.5
+offset_bottom = 33.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="Ctrl_BetAmount" type="HBoxContainer" parent="HUD/Ctrl_BetInterface" unique_id=117570829]
 layout_mode = 2
@@ -51,11 +52,15 @@ layout_mode = 2
 text = "Roll!"
 
 [node name="Btn_Back" type="Button" parent="HUD" unique_id=1758183168]
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -22.5
 offset_top = -31.0
-offset_right = 45.0
+offset_right = 22.5
+grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
