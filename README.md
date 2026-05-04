@@ -4,9 +4,10 @@ A cozy arcade-style collection of minigames based on Eientei's lovely rabbits.
 ## Original Work
 All original code, assets, and content created for Touhou Eientei Arcade 
 are the work of Studio MYA. \
+\
 Code: [Yeosuwa] \
 Artworks: [Meki] & [Myst] \
-OST/SFX: [Lamp] \
+OST/SFX: [Lamp] 
 
 ## Legal
 Touhou Eientei Arcade is an unofficial Touhou Project fangame.
