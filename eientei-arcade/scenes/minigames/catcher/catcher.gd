@@ -79,6 +79,7 @@ func finish_game():
 	for bamboo in container.get_children():
 		bamboo.queue_free()
 	var tickets = score * 5
+	$Cnv_Screen/WinLose.visible = true
 	end_game(tickets)
 
 #Display update

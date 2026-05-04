@@ -2,19 +2,12 @@
 
 [ext_resource type="Script" uid="uid://f2cbij2i1i03" path="res://scenes/minigames/catcher/catcher.gd" id="1_533uj"]
 [ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_hfvev"]
+[ext_resource type="PackedScene" uid="uid://th10mporjupd" path="res://scenes/win_lose/WinLose.tscn" id="3_yee0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_533uj"]
 
 [node name="Catcher" type="Node2D" unique_id=1496124140]
 script = ExtResource("1_533uj")
-
-[node name="BG" type="ColorRect" parent="." unique_id=1202669055]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.8117647, 0.6117647, 0.627451, 1)
 
 [node name="Char_Catcher" type="CharacterBody2D" parent="." unique_id=1533009607]
 position = Vector2(640, 640)
@@ -56,5 +49,21 @@ offset_bottom = 23.0
 grow_horizontal = 0
 
 [node name="BambooContainer" type="Node2D" parent="." unique_id=343382484]
+
+[node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=1486004780]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="Cnv_Screen" unique_id=1202669055]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("3_yee0l")]
+visible = false
+z_index = 1
 
 [connection signal="timeout" from="T_Spawner" to="." method="_on_t_spawner_timeout"]

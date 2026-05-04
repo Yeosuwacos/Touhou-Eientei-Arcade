@@ -2,5 +2,28 @@
 
 [ext_resource type="Script" uid="uid://jnbrl1tx5r63" path="res://scenes/win_lose/win_lose.gd" id="1_0fbcb"]
 
-[node name="Node2D" type="Node2D" unique_id=147960987]
+[node name="WinLose" type="Control" unique_id=1293454922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_0fbcb")
+
+[node name="Btn_Back" type="Button" parent="." unique_id=1921030251]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -15.5
+offset_right = 22.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
+[connection signal="pressed" from="Btn_Back" to="." method="_on_btn_back_pressed"]
