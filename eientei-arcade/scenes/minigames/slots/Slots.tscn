@@ -6,6 +6,11 @@
 [node name="Slots" type="Node2D" unique_id=2043198371]
 script = ExtResource("1_bpyby")
 
+[node name="T_Spin" type="Timer" parent="." unique_id=1904125567]
+
+[node name="T_Reel" type="Timer" parent="." unique_id=883742879]
+wait_time = 0.2
+
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1426505227]
 
 [node name="Txt_Winnings" type="Label" parent="HUD" unique_id=115850984]
@@ -60,3 +65,7 @@ color = Color(0.8117647, 0.6117647, 0.627451, 1)
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("2_via0e")]
 visible = false
 z_index = 1
+
+[connection signal="pressed" from="HUD/Ctrl_BetAmount/Btn_Lower" to="." method="_on_btn_lower_pressed"]
+[connection signal="pressed" from="HUD/Ctrl_BetAmount/Btn_Raise" to="." method="_on_btn_raise_pressed"]
+[connection signal="pressed" from="HUD/Btn_Back" to="." method="_on_btn_back_pressed"]

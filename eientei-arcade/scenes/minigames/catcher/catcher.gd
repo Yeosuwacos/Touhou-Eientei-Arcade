@@ -21,7 +21,6 @@ var playing = true
 @onready var lives_label = $HUD/Txt_Lives
 @onready var time_label = $HUD/Txt_Time
 
-
 func _ready():
 	call_deferred("start_game")
 
