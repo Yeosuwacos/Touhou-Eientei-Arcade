@@ -7,7 +7,7 @@ const PAYOUT = {
 	"lose": 0,
 	"s_win": 2,
 	"m_win": 3,
-	"l_win": 4
+	"l_win": 6
 }
 
 #Variables
@@ -84,6 +84,8 @@ func _on_t_spin_timeout():
 			get_win("lose")
 			pity += 1
 	else:
+		if reel1 == "lose":
+			reel1 = "s_win"
 		reel1img.texture = load(get_img(reel1))
 		reel2img.texture = load(get_img(reel1))
 		reel3img.texture = load(get_img(reel1))
