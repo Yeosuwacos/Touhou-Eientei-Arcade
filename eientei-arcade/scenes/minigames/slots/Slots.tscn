@@ -8,12 +8,9 @@ script = ExtResource("1_bpyby")
 
 [node name="T_Spin" type="Timer" parent="." unique_id=1904125567]
 
-[node name="T_Reel" type="Timer" parent="." unique_id=883742879]
-wait_time = 0.2
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1426505227]
 
-[node name="Txt_Winnings" type="Label" parent="HUD" unique_id=115850984]
+[node name="Txt_Tickets" type="Label" parent="HUD" unique_id=115850984]
 offset_top = 8.0
 offset_right = 1.0
 offset_bottom = 31.0
@@ -64,6 +61,31 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
 
+[node name="Ctrl_Screen" type="VBoxContainer" parent="HUD" unique_id=1611317198]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Txt_Outcome" type="Label" parent="HUD/Ctrl_Screen" unique_id=770664263]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Ctrl_Reels" type="HBoxContainer" parent="HUD/Ctrl_Screen" unique_id=521225798]
+layout_mode = 2
+
+[node name="Img_Reel1" type="TextureRect" parent="HUD/Ctrl_Screen/Ctrl_Reels" unique_id=2064051032]
+layout_mode = 2
+
+[node name="Img_Reel2" type="TextureRect" parent="HUD/Ctrl_Screen/Ctrl_Reels" unique_id=1792137465]
+layout_mode = 2
+
+[node name="Img_Reel3" type="TextureRect" parent="HUD/Ctrl_Screen/Ctrl_Reels" unique_id=1770623780]
+layout_mode = 2
+
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2078665871]
 layer = -1
 
@@ -80,6 +102,7 @@ color = Color(0.8117647, 0.6117647, 0.627451, 1)
 visible = false
 z_index = 1
 
+[connection signal="timeout" from="T_Spin" to="." method="_on_t_spin_timeout"]
 [connection signal="pressed" from="HUD/Ctrl_BetInterface/Ctrl_BetAmount/Btn_Lower" to="." method="_on_btn_lower_pressed"]
 [connection signal="pressed" from="HUD/Ctrl_BetInterface/Ctrl_BetAmount/Btn_Raise" to="." method="_on_btn_raise_pressed"]
 [connection signal="pressed" from="HUD/Ctrl_BetInterface/Btn_Roll" to="." method="_on_btn_roll_pressed"]

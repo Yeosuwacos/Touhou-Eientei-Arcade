@@ -1,3 +1,3 @@
 extends Node
 
-var tickets = 0
+var tickets = 1000
