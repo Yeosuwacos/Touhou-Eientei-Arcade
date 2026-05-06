@@ -39,7 +39,7 @@ func start_game():
 	update_hud()
 
 #Game
-func _process(delta: float):
+func _physics_process(delta: float):
 	time -= delta
 	time_label.text = "Time: %d" % ceil(time)
 	var velocity := Vector2.ZERO
@@ -80,7 +80,7 @@ func finish_game():
 	gametime.stop()
 	for bamboo in container.get_children():
 		bamboo.queue_free()
-	var tickets = score * 5
+	var tickets = score * 10
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")
