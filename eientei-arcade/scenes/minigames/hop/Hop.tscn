@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://da1xgf7dg8p0n" path="res://scenes/minigames/hop/hop.gd" id="1_exwd3"]
 [ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_rl5q4"]
 [ext_resource type="PackedScene" uid="uid://th10mporjupd" path="res://scenes/win_lose/WinLose.tscn" id="3_xrnq4"]
+[ext_resource type="PackedScene" uid="uid://t8pefjpby2ph" path="res://scenes/minigames/hop/Platform/platform.tscn" id="4_p61fi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrnq4"]
 
@@ -12,7 +13,7 @@
 script = ExtResource("1_exwd3")
 
 [node name="Char_Hop" type="CharacterBody2D" parent="." unique_id=106904951]
-position = Vector2(640, 620)
+position = Vector2(640, 560)
 
 [node name="Sprite2D" type="Sprite2D" parent="Char_Hop" unique_id=305667076]
 texture = ExtResource("2_rl5q4")
@@ -41,3 +42,6 @@ color = Color(0.8117647, 0.6117647, 0.627451, 1)
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("3_xrnq4")]
 visible = false
 z_index = 1
+
+[node name="Platform" parent="." unique_id=461738765 instance=ExtResource("4_p61fi")]
+position = Vector2(640, 640)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://t8pefjpby2ph"]
+
+[ext_resource type="Script" uid="uid://b21jl0fnbqbv6" path="res://scenes/minigames/hop/Platform/platform.gd" id="1_ygf64"]
+[ext_resource type="Texture2D" uid="uid://bv0wpp2ahx00t" path="res://assets/sprites/ui/game_covers/placeholder.png" id="2_ygf64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrkvk"]
+
+[node name="Platform" type="StaticBody2D" unique_id=461738765]
+script = ExtResource("1_ygf64")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=433641106]
+scale = Vector2(0.25, 0.08)
+texture = ExtResource("2_ygf64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=548724871]
+scale = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_mrkvk")
