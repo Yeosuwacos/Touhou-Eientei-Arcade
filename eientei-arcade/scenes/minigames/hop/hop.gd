@@ -8,7 +8,7 @@ const X_SPEED = 300.0
 const PLATFORM = preload("res://scenes/minigames/hop/Platform/platform.tscn")
 const P_MIN_GAP = 20.0
 const P_MAX_GAP = 60.0
-const Y_GAME_OVER = 50.0
+const Y_GAME_OVER = 92.0
 
 #Variables
 var p_speed = 100
@@ -17,6 +17,7 @@ var jump_pwr = 0.0
 var is_charging = false
 var platform_spawn = 3
 var timer = 0.0
+var scaling = 0.0
 var is_playing = false
 
 #Objects
@@ -40,7 +41,10 @@ func _physics_process(delta: float):
 	#Platform system
 	var plat = _current_platform()
 	if plat != null and chara.is_on_floor():
-		chara.velocity.x -= p_speed * delta
+		chara.position.x -= p_speed * delta * (1 + scaling)
+		
+		if plat.is_in_group("floor"):
+			finish_game()
 	
 	#Jump system
 	if Input.is_action_pressed("jump") and chara.is_on_floor():
@@ -56,19 +60,17 @@ func _physics_process(delta: float):
 	chara.velocity.y += GRAVITY * delta
 	chara.move_and_slide()
 
+	#Flooring
 	if chara.is_on_floor():
-		chara.velocity.y = 0.0
-		if plat != null:
-			chara.velocity.x = -p_speed
-		else:
-			chara.velocity.x = 0.0
+		chara.velocity.x = 0
+		chara.velocity.y = 0
 
 	#Lose conditions
 	chara.position.x = clamp(chara.position.x, 50, get_window().size.x - 50)
 	if chara.position.x <= 50:
 		finish_game()
 		
-	if chara.position.y > get_window().size.y + Y_GAME_OVER:
+	if chara.position.y > get_window().size.y - Y_GAME_OVER:
 		finish_game()
 		
 	#Platform spawner
@@ -77,8 +79,9 @@ func _physics_process(delta: float):
 	timer -= delta
 	if timer <= 0.0:
 		timer = platform_spawn
-		platform_spawn = randf_range(3,6)
+		platform_spawn = randf_range(2,4)
 		tickets += 10
+		scaling += 0.1
 		_add_platform()
 
 #Platforms
@@ -94,7 +97,7 @@ func _add_platform():
 #Platform movement
 func _move_platforms(delta):
 	for platform in get_tree().get_nodes_in_group("platforms"):
-		platform.position.x -= p_speed * delta
+		platform.position.x -= p_speed * delta * (1 + scaling)
 		if platform.position.x < -100:
 			platform.queue_free()
 			
