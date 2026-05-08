@@ -8,3 +8,4 @@ func start_game():
 
 func end_game(tickets_won):
 	game_finished.emit(tickets_won)
+	GameManager.tickets += tickets_won
