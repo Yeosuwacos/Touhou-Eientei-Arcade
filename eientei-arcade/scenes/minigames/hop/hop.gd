@@ -8,7 +8,7 @@ const X_SPEED = 300.0
 const PLATFORM = preload("res://scenes/minigames/hop/Platform/platform.tscn")
 const P_MIN_GAP = 20.0
 const P_MAX_GAP = 60.0
-const Y_GAME_OVER = 92.0
+const Y_GAME_OVER = 91.0
 
 #Variables
 var p_speed = 100
@@ -25,12 +25,14 @@ var is_playing = false
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
+@onready var jump_indicator = $Char_Hop/Jump_Power
 
 #Initialization 
 
 func _ready():
 	chara.up_direction = Vector2.UP
 	chara.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+	jump_indicator.max_value = MAX_JUMP
 
 func start_game():
 	is_playing = true
@@ -49,12 +51,14 @@ func _physics_process(delta: float):
 	#Jump system
 	if Input.is_action_pressed("jump") and chara.is_on_floor():
 		jump_pwr = min(jump_pwr + CHARGE * delta, MAX_JUMP)
+		jump_indicator.value = jump_pwr
 		is_charging = true
 
 	if is_charging and not Input.is_action_pressed("jump"):
-		chara.velocity.y = -jump_pwr
-		chara.velocity.x = X_SPEED/2
+		chara.velocity.y = -jump_pwr*1.5
+		chara.velocity.x = X_SPEED/1.5
 		jump_pwr = 0.0
+		jump_indicator.value = 0.0
 		is_charging = false
 
 	chara.velocity.y += GRAVITY * delta

@@ -21,6 +21,14 @@ texture = ExtResource("2_rl5q4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Char_Hop" unique_id=123751630]
 shape = SubResource("RectangleShape2D_xrnq4")
 
+[node name="Jump_Power" type="ProgressBar" parent="Char_Hop" unique_id=1470953779]
+offset_left = -50.0
+offset_top = -32.0
+offset_right = -30.0
+offset_bottom = 32.0
+fill_mode = 3
+show_percentage = false
+
 [node name="Hbx_Floor" type="StaticBody2D" parent="." unique_id=919377061]
 position = Vector2(0, 640)
 
