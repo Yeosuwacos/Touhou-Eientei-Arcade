@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2gtqliyhblea"]
+
+[ext_resource type="Script" uid="uid://l6brl3jbscx0" path="res://scenes/minigames/memory/card/card.gd" id="1_bs5nx"]
+
+[node name="Card" type="TextureRect" unique_id=680891590]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bs5nx")
+id = null

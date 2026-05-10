@@ -122,7 +122,7 @@ func get_img(type):
 
 #Return to games list
 func _on_btn_back_pressed():
-	end_game(winnings)
+	end_game(0)
 	SceneTransition.go_to("res://scenes/game_select/GameSelect.tscn")
 
 #Display update

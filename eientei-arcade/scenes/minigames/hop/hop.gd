@@ -28,15 +28,14 @@ var is_playing = false
 @onready var jump_indicator = $Char_Hop/Jump_Power
 
 #Initialization 
-
 func _ready():
+	call_deferred("start_game")
+
+func start_game():
 	chara.up_direction = Vector2.UP
 	chara.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	jump_indicator.max_value = MAX_JUMP
-
-func start_game():
 	is_playing = true
-	_add_platform()
 
 #Game
 func _physics_process(delta: float):

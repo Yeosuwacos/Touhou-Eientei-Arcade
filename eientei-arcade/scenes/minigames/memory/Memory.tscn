@@ -1,6 +1,39 @@
 [gd_scene format=3 uid="uid://dnt2d1kbr7xbl"]
 
 [ext_resource type="Script" uid="uid://bybweqor3dnd2" path="res://scenes/minigames/memory/memory.gd" id="1_ryd4u"]
+[ext_resource type="PackedScene" uid="uid://th10mporjupd" path="res://scenes/win_lose/WinLose.tscn" id="2_r4iye"]
 
-[node name="Node2D" type="Node2D" unique_id=1880898603]
+[node name="Memory" type="Node2D" unique_id=1880898603]
 script = ExtResource("1_ryd4u")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2066098485]
+
+[node name="Ctrl_CardList" type="GridContainer" parent="HUD" unique_id=702921908]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2017552381]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="Cnv_Screen" unique_id=5291784]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("2_r4iye")]
+visible = false
+z_index = 1
