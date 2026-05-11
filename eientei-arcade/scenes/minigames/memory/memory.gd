@@ -2,6 +2,7 @@ extends MinigameBase
 
 #Constants
 const CARD_SIZE = Vector2(160, 160)
+const T_MULT = 50
 
 #Variables
 var tickets = 0
@@ -9,6 +10,7 @@ var cards = [1,1,1,2,2,2,3,3,3,4,4,4,5,5,5]
 var sel_cards = []
 var m_attempts = 3
 var tries = 5
+var s_matches = 0
 var flippable = true
 
 #Objects
@@ -65,17 +67,22 @@ func check_match():
 			break
 	
 	if matching:
+		s_matches += 1
 		for card in sel_cards:
 			card.disabled = true
 	else:
+		tries -= 1
 		await get_tree().create_timer(1.0).timeout
 		for card in sel_cards:
 			card.flip()
 
 	sel_cards.clear()
+	if tries == 0 or s_matches == 5:
+		finish_game()
 
 #Game end
 func finish_game():
+	tickets = s_matches * T_MULT
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")
