@@ -18,12 +18,14 @@ var flippable = true
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 @onready var card_holder = $HUD/Ctrl_CardList
+@onready var tries_label = $HUD/Txt_Tries
 
 func _ready():
 	call_deferred("start_game")
 
 #Initialization 
 func start_game():
+	tries_label.text = "Tries: %d" % tries
 	#Adding cards to the board
 	randomize()
 	cards.shuffle()
@@ -75,14 +77,17 @@ func check_match():
 		await get_tree().create_timer(1.0).timeout
 		for card in sel_cards:
 			card.flip()
-
+	
+	tries_label.text = "Tries: %d" % tries
 	sel_cards.clear()
 	if tries == 0 or s_matches == 5:
+		await get_tree().create_timer(1.0).timeout
 		finish_game()
 
 #Game end
 func finish_game():
 	tickets = s_matches * T_MULT
+	card_holder.visible = false
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")
