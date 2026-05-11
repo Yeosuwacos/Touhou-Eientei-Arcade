@@ -5,9 +5,10 @@
 [node name="Shell" type="Node2D" unique_id=1159034970]
 script = ExtResource("1_ownjn")
 
-[node name="Img_Cup" type="TextureRect" parent="." unique_id=207720557]
+[node name="Img_Cup" type="TextureButton" parent="." unique_id=1480952454]
 custom_minimum_size = Vector2(140, 140)
-expand_mode = 2
+offset_right = 140.0
+offset_bottom = 140.0
 stretch_mode = 5
 
 [node name="Img_Prize" type="TextureRect" parent="." unique_id=900889956]

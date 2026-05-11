@@ -23,6 +23,10 @@ func _ready():
 #Initialization 
 func start_game():
 	randomize()
+	prize_cup.selected.connect(_on_selected)
+	empty_cup_1.selected.connect(_on_selected)
+	empty_cup_2.selected.connect(_on_selected)
+	
 	prize_cup.position = Vector2(pos_x/2, pos_y)
 	empty_cup_1.position = Vector2(prize_cup.position.x - C_DIST, pos_y)
 	empty_cup_2.position = Vector2(prize_cup.position.x + C_DIST, pos_y)
@@ -44,6 +48,13 @@ func shuffle_cups(c1,c2,reps):
 	anim.tween_property(c1, "global_position", p2, S_SPEED)
 	anim.tween_property(c2, "global_position", p1, S_SPEED)
 	await anim.finished
+
+#Selection
+func _on_selected(shell):
+	if shell.has_prize:
+		pass
+	else:
+		pass
 
 func finish_game():
 	win_lose.visible = true
