@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bj2rdyege1vav"]
+
+[ext_resource type="Script" uid="uid://bbbbaveo2xabl" path="res://scenes/minigames/cups/shell/shell.gd" id="1_ownjn"]
+
+[node name="Shell" type="Node2D" unique_id=1159034970]
+script = ExtResource("1_ownjn")
+
+[node name="Img_Cup" type="TextureRect" parent="." unique_id=207720557]
+custom_minimum_size = Vector2(140, 140)
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Img_Prize" type="TextureRect" parent="." unique_id=900889956]
