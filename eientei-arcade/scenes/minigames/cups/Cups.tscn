@@ -16,6 +16,16 @@ has_prize = true
 
 [node name="Cup_Empty2" parent="HUD" unique_id=1580554577 instance=ExtResource("2_88cxo")]
 
+[node name="Cnv_Anchors" type="CanvasLayer" parent="." unique_id=665565107]
+
+[node name="Anchor1" type="Marker2D" parent="Cnv_Anchors" unique_id=76495612]
+
+[node name="Anchor2" type="Marker2D" parent="Cnv_Anchors" unique_id=1350880993]
+
+[node name="Anchor3" type="Marker2D" parent="Cnv_Anchors" unique_id=1447898488]
+
+[node name="Anchor_Prize" type="Marker2D" parent="Cnv_Anchors" unique_id=843676726]
+
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2135914164]
 layer = -1
 
