@@ -84,7 +84,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
+columns = 3
 
 [node name="BambooCatcher" parent="Ctrl_GameList" unique_id=93363172 instance=ExtResource("2_c2cf1")]
 layout_mode = 2
@@ -104,23 +104,11 @@ game_name = "Bunnyhop"
 thumbnail = ExtResource("3_ctrha")
 path = "res://scenes/minigames/hop/Hop.tscn"
 
-[node name="Maze" parent="Ctrl_GameList" unique_id=787137659 instance=ExtResource("2_c2cf1")]
-layout_mode = 2
-game_name = "Maze"
-thumbnail = ExtResource("3_ctrha")
-path = "res://scenes/minigames/maze/Maze.tscn"
-
 [node name="MemoryMatch" parent="Ctrl_GameList" unique_id=1435924969 instance=ExtResource("2_c2cf1")]
 layout_mode = 2
 game_name = "Memory match"
 thumbnail = ExtResource("3_ctrha")
 path = "res://scenes/minigames/memory/Memory.tscn"
-
-[node name="MochiToss" parent="Ctrl_GameList" unique_id=559277540 instance=ExtResource("2_c2cf1")]
-layout_mode = 2
-game_name = "Mochi toss"
-thumbnail = ExtResource("3_ctrha")
-path = "res://scenes/minigames/mochi/Mochi.tscn"
 
 [node name="LunarTaiko" parent="Ctrl_GameList" unique_id=347576213 instance=ExtResource("2_c2cf1")]
 layout_mode = 2
