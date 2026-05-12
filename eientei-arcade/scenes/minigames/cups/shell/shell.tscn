@@ -10,5 +10,3 @@ custom_minimum_size = Vector2(140, 140)
 offset_right = 140.0
 offset_bottom = 140.0
 stretch_mode = 5
-
-[node name="Img_Prize" type="TextureRect" parent="." unique_id=900889956]
