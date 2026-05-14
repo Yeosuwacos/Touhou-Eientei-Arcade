@@ -1,7 +1,7 @@
 extends MinigameBase
 
 #Constants
-const NOTE = preload("res://scenes/minigames/catcher/Bamboo/note/note.tscn")
+const NOTE = preload("res://scenes/minigames/moon/note/note.tscn")
 const COLORS = ["red","blue","yellow","green"]
 const BPM = 120.0
 const BEAT = 60.0/BPM
@@ -17,15 +17,16 @@ var p_index = 0
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
-@onready var slider = $Ctrl_Layout/Ctrl_Slider
-@onready var note_spawn = $Ctrl_Layout/Ctrl_Slider/Img_Spawner
+@onready var n_spawn = $Ctrl_Layout/Ctrl_Spawn_Pos/Img_Spawner
+@onready var n_input = $Ctrl_Layout/Area_Target
 
 func _ready():
 	call_deferred("start_game")
 
 #Initialization
 func start_game():
-	slider.add_theme_constant_override("separation", 400)
+	n_spawn.global_position.x = get_viewport().size.x/2 + get_viewport().size.x/4
+	n_input.global_position.x = n_spawn.global_position.x - 600
 	p_current = p_random()
 
 #Game
@@ -45,7 +46,7 @@ func _physics_process(delta: float):
 func spawn_note(n_type):
 	var note = NOTE.instantiate()
 	note.color = COLORS.pick_random()
-	note.position = note_spawn.global_position
+	note.position = n_spawn.global_position
 	add_child(note)
 	
 #Random note

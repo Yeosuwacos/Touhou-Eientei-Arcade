@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://w122ksyuyi51" path="res://scenes/minigames/moon/moon.gd" id="1_qhkw3"]
 [ext_resource type="PackedScene" uid="uid://th10mporjupd" path="res://scenes/win_lose/WinLose.tscn" id="2_dv4y1"]
+[ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_mrepa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrepa"]
 
 [node name="Moon" type="Node2D" unique_id=1220977019]
 script = ExtResource("1_qhkw3")
 
-[node name="Ctrl_Layout" type="Control" parent="." unique_id=58445209]
+[node name="Ctrl_Layout" type="Control" parent="." unique_id=1677526070]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,25 +19,31 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Ctrl_Slider" type="HBoxContainer" parent="Ctrl_Layout" unique_id=1700521869]
+[node name="Area_Target" type="Area2D" parent="Ctrl_Layout" unique_id=926078576]
+position = Vector2(624, 344)
+
+[node name="Img_Target" type="Sprite2D" parent="Ctrl_Layout/Area_Target" unique_id=1449587686]
+texture = ExtResource("2_mrepa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ctrl_Layout/Area_Target" unique_id=575494545]
+shape = SubResource("RectangleShape2D_mrepa")
+
+[node name="Ctrl_Spawn_Pos" type="Control" parent="Ctrl_Layout" unique_id=67244551]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Img_Target" type="ColorRect" parent="Ctrl_Layout/Ctrl_Slider" unique_id=1238388385]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-color = Color(0.08235294, 1, 1, 0.34117648)
-
-[node name="Img_Spawner" type="ColorRect" parent="Ctrl_Layout/Ctrl_Slider" unique_id=1118046282]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-color = Color(0.08235294, 1, 0, 0.34117648)
+[node name="Img_Spawner" type="Sprite2D" parent="Ctrl_Layout/Ctrl_Spawn_Pos" unique_id=751810926]
+texture = ExtResource("2_mrepa")
 
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2070429672]
 layer = -1
