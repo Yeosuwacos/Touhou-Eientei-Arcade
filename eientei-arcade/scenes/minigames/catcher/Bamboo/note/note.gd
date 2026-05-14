@@ -2,17 +2,24 @@ class_name Note
 extends Area2D
 
 #Variables
-@export var type: String
+@export var color: String
 @export var illust: Texture2D
+
+#Constants
+const SPEED = 300.0
 
 #Initialization
 func _ready():
-	match type:
-		"blue":
-			$Sprite2D.texture = load("res://assets/sprites/common/p_blue.png")
+	match color:
 		"red":
 			$Sprite2D.texture = load("res://assets/sprites/common/p_red.png")
+		"blue":
+			$Sprite2D.texture = load("res://assets/sprites/common/p_blue.png")
 		"green":
-			$Sprite2d.texture = load("res://assets/sprites/common/p_green.png")
+			$Sprite2D.texture = load("res://assets/sprites/common/p_green.png")
 		"yellow": 
-			$Sprite2d.texture = load("res://assets/sprites/common/p_yellow.png")
+			$Sprite2D.texture = load("res://assets/sprites/common/p_yellow.png")
+
+#Note dynamic
+func _process(delta: float):
+	position.x -= SPEED * delta

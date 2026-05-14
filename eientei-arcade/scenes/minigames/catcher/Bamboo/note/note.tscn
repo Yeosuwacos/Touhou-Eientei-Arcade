@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77x2s"]
 
 [node name="Note" type="Area2D" unique_id=2033518031]
+z_index = 1
 script = ExtResource("1_4rorw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1799275094]
