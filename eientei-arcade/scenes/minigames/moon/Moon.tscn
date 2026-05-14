@@ -1,6 +1,53 @@
 [gd_scene format=3 uid="uid://dk7llm2knh3wp"]
 
 [ext_resource type="Script" uid="uid://w122ksyuyi51" path="res://scenes/minigames/moon/moon.gd" id="1_qhkw3"]
+[ext_resource type="PackedScene" uid="uid://th10mporjupd" path="res://scenes/win_lose/WinLose.tscn" id="2_dv4y1"]
 
-[node name="Node2D" type="Node2D" unique_id=1220977019]
+[node name="Moon" type="Node2D" unique_id=1220977019]
 script = ExtResource("1_qhkw3")
+
+[node name="Ctrl_Layout" type="Control" parent="." unique_id=58445209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ctrl_Slider" type="HBoxContainer" parent="Ctrl_Layout" unique_id=1700521869]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Img_Target" type="ColorRect" parent="Ctrl_Layout/Ctrl_Slider" unique_id=1238388385]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.08235294, 1, 1, 0.34117648)
+
+[node name="Img_Spawner" type="ColorRect" parent="Ctrl_Layout/Ctrl_Slider" unique_id=1118046282]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.08235294, 1, 0, 0.34117648)
+
+[node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2070429672]
+layer = -1
+
+[node name="BG" type="ColorRect" parent="Cnv_Screen" unique_id=427396454]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("2_dv4y1")]
+visible = false
+z_index = 1
