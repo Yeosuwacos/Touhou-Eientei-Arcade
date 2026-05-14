@@ -12,3 +12,7 @@ func _ready():
 			$Sprite2D.texture = load("res://assets/sprites/common/p_blue.png")
 		"red":
 			$Sprite2D.texture = load("res://assets/sprites/common/p_red.png")
+		"green":
+			$Sprite2d.texture = load("res://assets/sprites/common/p_green.png")
+		"yellow": 
+			$Sprite2d.texture = load("res://assets/sprites/common/p_yellow.png")
