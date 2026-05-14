@@ -45,6 +45,8 @@ grow_vertical = 2
 [node name="Img_Spawner" type="Sprite2D" parent="Ctrl_Layout/Ctrl_Spawn_Pos" unique_id=751810926]
 texture = ExtResource("2_mrepa")
 
+[node name="NoteContainer" type="Node2D" parent="." unique_id=1829630856]
+
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2070429672]
 layer = -1
 

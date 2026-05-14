@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsckj3s485swf"]
 
-[ext_resource type="Script" uid="uid://c0bi0d2t1r7it" path="res://scenes/minigames/catcher/Bamboo/note/note.gd" id="1_4rorw"]
+[ext_resource type="Script" uid="uid://c0bi0d2t1r7it" path="res://scenes/minigames/moon/note/note.gd" id="1_4rorw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77x2s"]
 
@@ -12,3 +12,5 @@ script = ExtResource("1_4rorw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486936196]
 shape = SubResource("RectangleShape2D_77x2s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

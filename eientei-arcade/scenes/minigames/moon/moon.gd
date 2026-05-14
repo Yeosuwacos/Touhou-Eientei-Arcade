@@ -19,6 +19,7 @@ var p_index = 0
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 @onready var n_spawn = $Ctrl_Layout/Ctrl_Spawn_Pos/Img_Spawner
 @onready var n_input = $Ctrl_Layout/Area_Target
+@onready var container = $NoteContainer
 
 func _ready():
 	call_deferred("start_game")
@@ -39,15 +40,15 @@ func _physics_process(delta: float):
 			
 		var n_type = p_current[p_index]
 		p_index += 1
-		spawn_note(n_type)
+		spawn_note()
 		n_next = n_length[n_type]
 
 #Note spawner
-func spawn_note(n_type):
+func spawn_note():
 	var note = NOTE.instantiate()
 	note.color = COLORS.pick_random()
 	note.position = n_spawn.global_position
-	add_child(note)
+	container.add_child(note)
 	
 #Random note
 func p_random():

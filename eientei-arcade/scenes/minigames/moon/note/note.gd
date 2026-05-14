@@ -23,3 +23,10 @@ func _ready():
 #Note dynamic
 func _process(delta: float):
 	position.x -= SPEED * delta
+	if position.y > get_window().size.x - 50:
+		queue_free()
+
+#If hit
+func _on_body_entered(body: Node):
+	if body.name == "Area_Target":
+		print("blep")
