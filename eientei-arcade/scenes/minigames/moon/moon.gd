@@ -12,6 +12,8 @@ var n_length = {"whole": BEAT * 4.0, "half": BEAT * 2.0, "quarter": BEAT, "eight
 var n_next = 0.0
 var p_current = []
 var p_index = 0
+var score = 0
+var p_rem = 10
 
 #Objects
 @onready var win_lose = $Cnv_Screen/WinLose
@@ -21,7 +23,8 @@ var p_index = 0
 @onready var n_input = $Ctrl_Layout/Area_Target
 @onready var container = $NoteContainer
 @onready var hit_indicator = $HUD/Txt_Hit
-@onready var score = $HUD/Txt_Score
+@onready var score_label = $HUD/Txt_Score
+@onready var layout = $Ctrl_Layout
 
 func _ready():
 	call_deferred("start_game")
@@ -30,15 +33,23 @@ func _ready():
 func start_game():
 	n_spawn.global_position.x = get_viewport().size.x/2 + get_viewport().size.x/4
 	n_input.global_position.x = n_spawn.global_position.x - 600
+	hit_indicator.position = Vector2(n_input.global_position.x, n_input.global_position.y - 60)
+	score_label.text = "Score: 0"
 	p_current = p_random()
+	p_rem -= 1
 
 #Game
 func _physics_process(delta: float):
+	if p_rem <= 0:
+		await get_tree().create_timer(3.0).timeout
+		finish_game()
+		return
 	n_next -= delta
 	if n_next <= 0:
 		if p_index >= p_current.size():
 			p_current = p_random()
 			p_index = 0
+			p_rem -= 1
 			
 		var n_type = p_current[p_index]
 		p_index += 1
@@ -66,15 +77,19 @@ func p_random():
 
 #Hitting a note
 func _on_note_hit():
-	print("blep")
+	hit_indicator.text = "O"
+	score += 5
+	score_label.text = "Score: %d" % score
 
 #Missing a note
 func _on_note_missed():
-	print("eh")
+	hit_indicator.text = "X"
 
 #End game
 func finish_game():
-	tickets = 0
+	set_physics_process(false)
+	tickets = score
+	layout.visible = false
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")
