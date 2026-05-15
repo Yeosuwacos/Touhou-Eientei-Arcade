@@ -20,6 +20,8 @@ var p_index = 0
 @onready var n_spawn = $Ctrl_Layout/Ctrl_Spawn_Pos/Img_Spawner
 @onready var n_input = $Ctrl_Layout/Area_Target
 @onready var container = $NoteContainer
+@onready var hit_indicator = $HUD/Txt_Hit
+@onready var score = $HUD/Txt_Score
 
 func _ready():
 	call_deferred("start_game")
@@ -48,6 +50,8 @@ func spawn_note():
 	var note = NOTE.instantiate()
 	note.color = COLORS.pick_random()
 	note.position = n_spawn.global_position
+	note.hit.connect(_on_note_hit)
+	note.miss.connect(_on_note_missed)
 	container.add_child(note)
 	
 #Random note
@@ -60,6 +64,15 @@ func p_random():
 	]
 	return patterns.pick_random()
 
+#Hitting a note
+func _on_note_hit():
+	print("blep")
+
+#Missing a note
+func _on_note_missed():
+	print("eh")
+
+#End game
 func finish_game():
 	tickets = 0
 	win_lose.visible = true

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b640nso4kqgur" path="res://assets/sprites/common/sprite_placeholder.png" id="2_mrepa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrepa"]
+size = Vector2(64, 64)
 
 [node name="Moon" type="Node2D" unique_id=1220977019]
 script = ExtResource("1_qhkw3")
@@ -46,6 +47,25 @@ grow_vertical = 2
 texture = ExtResource("2_mrepa")
 
 [node name="NoteContainer" type="Node2D" parent="." unique_id=1829630856]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1364471245]
+
+[node name="Txt_Score" type="Label" parent="HUD" unique_id=82497176]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Txt_Hit" type="Label" parent="HUD" unique_id=320585382]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
 
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=2070429672]
 layer = -1
