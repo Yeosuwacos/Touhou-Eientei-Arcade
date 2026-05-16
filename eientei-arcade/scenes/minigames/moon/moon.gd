@@ -1,6 +1,7 @@
 extends MinigameBase
 
 #Constants
+const START = preload("res://scenes/start/start.tscn")
 const NOTE = preload("res://scenes/minigames/moon/note/note.tscn")
 const COLORS = ["red","blue","yellow","green"]
 const BPM = 120.0
@@ -25,12 +26,18 @@ var p_rem = 10
 @onready var hit_indicator = $HUD/Txt_Hit
 @onready var score_label = $HUD/Txt_Score
 @onready var layout = $Ctrl_Layout
+@onready var cnv_start = $Cnv_Start
 
 func _ready():
-	call_deferred("start_game")
+	set_physics_process(false)
+	var start = START.instantiate()
+	start.start.connect(start_game)
+	cnv_start.add_child(start)
 
 #Initialization
 func start_game():
+	set_physics_process(true)
+	cnv_start.visible = false
 	n_spawn.global_position.x = get_viewport().size.x/2 + get_viewport().size.x/4
 	n_input.global_position.x = n_spawn.global_position.x - 600
 	hit_indicator.position = Vector2(n_input.global_position.x, n_input.global_position.y - 60)

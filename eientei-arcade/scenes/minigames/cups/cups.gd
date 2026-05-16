@@ -1,6 +1,7 @@
 extends MinigameBase
 
 #Constants
+const START = preload("res://scenes/start/start.tscn")
 const C_DIST = 200
 const P_DIST = 100
 const SHUFFLES = 25
@@ -21,12 +22,16 @@ var tickets = 0
 @onready var empty_cup_1 = $HUD/Ctrl_Cups/Cup_Empty1
 @onready var empty_cup_2 = $HUD/Ctrl_Cups/Cup_Empty2
 @onready var prize_img = $HUD/Img_Prize
+@onready var cnv_start = $Cnv_Start
 
 func _ready():
-	call_deferred("start_game")
+	var start = START.instantiate()
+	start.start.connect(start_game)
+	cnv_start.add_child(start)
 
 #Initialization 
 func start_game():
+	cnv_start.visible = false
 	randomize()
 	prize_cup.selected.connect(_on_selected)
 	empty_cup_1.selected.connect(_on_selected)

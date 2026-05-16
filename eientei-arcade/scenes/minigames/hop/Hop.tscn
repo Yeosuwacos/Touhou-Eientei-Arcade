@@ -56,3 +56,5 @@ position = Vector2(640, 640)
 
 [node name="Obj_P_Start2" parent="." unique_id=1074471044 instance=ExtResource("4_p61fi")]
 position = Vector2(960, 620)
+
+[node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=456228729]

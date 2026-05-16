@@ -1,6 +1,7 @@
 extends MinigameBase
 
 #Game constants
+const START = preload("res://scenes/start/start.tscn")
 const BAMBOO = preload("res://scenes/minigames/catcher/Bamboo/bamboo.tscn")
 const DURATION = 60.0
 const LIVES = 5
@@ -20,15 +21,21 @@ var playing = true
 @onready var score_label = $HUD/Txt_Score
 @onready var lives_label = $HUD/Txt_Lives
 @onready var time_label = $HUD/Txt_Time
+@onready var cnv_start = $Cnv_Start
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 
 func _ready():
-	call_deferred("start_game")
+	set_physics_process(false)
+	var start = START.instantiate()
+	start.start.connect(start_game)
+	cnv_start.add_child(start)
 
 #Initialization 
 func start_game():
+	set_physics_process(true)
+	cnv_start.visible = false
 	score = 0
 	misses = 0
 	time = DURATION
@@ -75,7 +82,7 @@ func _on_bamboo_missed():
 
 #Game end and tickets
 func finish_game():
-	set_process(false)
+	set_physics_process(false)
 	spawner.stop()
 	gametime.stop()
 	for bamboo in container.get_children():

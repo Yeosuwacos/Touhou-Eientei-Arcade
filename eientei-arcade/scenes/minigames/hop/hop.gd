@@ -1,6 +1,7 @@
 extends MinigameBase
 
 #Game constants
+const START = preload("res://scenes/start/start.tscn")
 const GRAVITY = 800.0
 const MAX_JUMP = 600.0
 const CHARGE = 300.0
@@ -26,12 +27,18 @@ var is_playing = false
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 @onready var jump_indicator = $Char_Hop/Jump_Power
+@onready var cnv_start = $Cnv_Start
 
 #Initialization 
 func _ready():
-	call_deferred("start_game")
+	set_physics_process(false)
+	var start = START.instantiate()
+	start.start.connect(start_game)
+	cnv_start.add_child(start)
 
 func start_game():
+	set_physics_process(true)
+	cnv_start.visible = false
 	chara.up_direction = Vector2.UP
 	chara.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	jump_indicator.max_value = MAX_JUMP

@@ -82,3 +82,5 @@ color = Color(0.8117647, 0.6117647, 0.627451, 1)
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("2_dv4y1")]
 visible = false
 z_index = 1
+
+[node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=1910986570]

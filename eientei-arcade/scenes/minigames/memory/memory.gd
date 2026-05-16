@@ -1,6 +1,7 @@
 extends MinigameBase
 
 #Constants
+const START = preload("res://scenes/start/start.tscn")
 const CARD_SIZE = Vector2(160, 160)
 const T_MULT = 50
 
@@ -19,12 +20,16 @@ var flippable = true
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 @onready var card_holder = $HUD/Ctrl_CardList
 @onready var tries_label = $HUD/Txt_Tries
+@onready var cnv_start = $Cnv_Start
 
 func _ready():
-	call_deferred("start_game")
+	var start = START.instantiate()
+	start.start.connect(start_game)
+	cnv_start.add_child(start)
 
 #Initialization 
 func start_game():
+	cnv_start.visible = false
 	tries_label.text = "Tries: %d" % tries
 	#Adding cards to the board
 	randomize()
