@@ -27,6 +27,7 @@ var p_rem = 10
 @onready var score_label = $HUD/Txt_Score
 @onready var layout = $Ctrl_Layout
 @onready var cnv_start = $Cnv_Start
+@onready var cnv_screen = $Cnv_Screen
 
 func _ready():
 	set_physics_process(false)
@@ -96,7 +97,7 @@ func _on_note_missed():
 func finish_game():
 	set_physics_process(false)
 	tickets = score
-	layout.visible = false
+	cnv_screen.layer = 2
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")

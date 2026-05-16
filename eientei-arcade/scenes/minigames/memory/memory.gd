@@ -21,6 +21,7 @@ var flippable = true
 @onready var card_holder = $HUD/Ctrl_CardList
 @onready var tries_label = $HUD/Txt_Tries
 @onready var cnv_start = $Cnv_Start
+@onready var cnv_screen = $Cnv_Screen
 
 func _ready():
 	var start = START.instantiate()
@@ -92,7 +93,7 @@ func check_match():
 #Game end
 func finish_game():
 	tickets = s_matches * T_MULT
-	card_holder.visible = false
+	cnv_screen.layer = 2
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")

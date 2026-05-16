@@ -38,15 +38,6 @@ shape = SubResource("WorldBoundaryShape2D_xrnq4")
 [node name="Cnv_Screen" type="CanvasLayer" parent="." unique_id=767329791]
 layer = -1
 
-[node name="BG" type="ColorRect" parent="Cnv_Screen" unique_id=2040979054]
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.8117647, 0.6117647, 0.627451, 1)
-
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("3_xrnq4")]
 visible = false
 z_index = 1
@@ -58,3 +49,15 @@ position = Vector2(640, 640)
 position = Vector2(960, 620)
 
 [node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=456228729]
+
+[node name="BG" type="ColorRect" parent="." unique_id=713567969]
+z_index = -2
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8117647, 0.6117647, 0.627451, 1)

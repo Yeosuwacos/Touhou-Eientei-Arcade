@@ -23,6 +23,7 @@ var is_playing = false
 
 #Objects
 @onready var chara = $Char_Hop
+@onready var cnv_screen = $Cnv_Screen
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
@@ -122,6 +123,7 @@ func _current_platform():
 func finish_game():
 	is_playing = false
 	set_physics_process(false)
+	cnv_screen.layer = 2
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")

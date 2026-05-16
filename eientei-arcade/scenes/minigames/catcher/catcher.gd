@@ -22,6 +22,7 @@ var playing = true
 @onready var lives_label = $HUD/Txt_Lives
 @onready var time_label = $HUD/Txt_Time
 @onready var cnv_start = $Cnv_Start
+@onready var cnv_screen = $Cnv_Screen
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
@@ -88,6 +89,7 @@ func finish_game():
 	for bamboo in container.get_children():
 		bamboo.queue_free()
 	var tickets = score * 10
+	cnv_screen.layer = 2
 	win_lose.visible = true
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")

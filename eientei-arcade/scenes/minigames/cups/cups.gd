@@ -14,6 +14,7 @@ var tickets = 0
 
 #Objects
 @onready var hud = $HUD
+@onready var cnv_screen = $Cnv_Screen
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
@@ -90,6 +91,6 @@ func _on_selected(shell):
 func finish_game():
 	tickets_label.text = "You won %d tickets!" % tickets
 	end_image.texture = load("res://assets/sprites/ui/game_covers/placeholder.png")
-	hud.visible = false
+	cnv_screen.layer = 2
 	win_lose.visible = true
 	end_game(tickets)
