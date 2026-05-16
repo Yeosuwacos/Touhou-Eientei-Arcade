@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 AudioManager="*uid://dronbgovbpqma"
 GameManager="*uid://m1r7amik75nx"
-SceneTransition="*uid://b6eiv6cy5vu65"
+SceneTransition="*uid://b02ls7v5dawgv"
 
 [display]
 

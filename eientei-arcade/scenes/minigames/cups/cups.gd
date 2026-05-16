@@ -38,7 +38,7 @@ func start_game():
 	empty_cup_1.selected.connect(_on_selected)
 	empty_cup_2.selected.connect(_on_selected)
 	
-	prize_cup.position = Vector2(pos_x/2, pos_y)
+	prize_cup.position = Vector2(pos_x/2 - C_DIST/2, pos_y)
 	prize_img.position = Vector2(prize_cup.position.x, prize_cup.position.y + P_DIST)
 	empty_cup_1.position = Vector2(prize_cup.position.x - C_DIST, pos_y)
 	empty_cup_2.position = Vector2(prize_cup.position.x + C_DIST, pos_y)

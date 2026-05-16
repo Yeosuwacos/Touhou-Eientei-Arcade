@@ -91,8 +91,9 @@ func _physics_process(delta: float):
 	if timer <= 0.0:
 		timer = platform_spawn
 		platform_spawn = randf_range(2,4)
-		tickets += 10
 		scaling += 0.1
+		platform_spawn -= scaling/2
+		tickets += 10
 		_add_platform()
 
 #Platforms
