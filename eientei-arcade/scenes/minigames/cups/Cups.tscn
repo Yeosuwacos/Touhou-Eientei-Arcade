@@ -24,6 +24,7 @@ has_prize = true
 [node name="Cup_Empty2" parent="HUD/Ctrl_Cups" unique_id=1580554577 instance=ExtResource("2_88cxo")]
 
 [node name="Img_Prize" type="TextureRect" parent="HUD" unique_id=257958313]
+visible = false
 z_index = -1
 offset_right = 140.0
 offset_bottom = 140.0

@@ -38,6 +38,7 @@ func _ready():
 #Initialization
 func start_game():
 	set_physics_process(true)
+	layout.visible = true
 	cnv_start.visible = false
 	n_spawn.global_position.x = get_viewport().size.x/2 + get_viewport().size.x/4
 	n_input.global_position.x = n_spawn.global_position.x - 600

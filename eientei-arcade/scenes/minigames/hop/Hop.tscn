@@ -13,6 +13,7 @@
 script = ExtResource("1_exwd3")
 
 [node name="Char_Hop" type="CharacterBody2D" parent="." unique_id=106904951]
+visible = false
 position = Vector2(640, 560)
 
 [node name="Sprite2D" type="Sprite2D" parent="Char_Hop" unique_id=305667076]
@@ -43,9 +44,11 @@ visible = false
 z_index = 1
 
 [node name="Obj_P_Start" parent="." unique_id=461738765 instance=ExtResource("4_p61fi")]
+visible = false
 position = Vector2(640, 640)
 
 [node name="Obj_P_Start2" parent="." unique_id=1074471044 instance=ExtResource("4_p61fi")]
+visible = false
 position = Vector2(960, 620)
 
 [node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=456228729]

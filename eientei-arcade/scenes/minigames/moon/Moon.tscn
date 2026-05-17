@@ -11,6 +11,7 @@ size = Vector2(64, 64)
 script = ExtResource("1_qhkw3")
 
 [node name="Ctrl_Layout" type="Control" parent="." unique_id=1677526070]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

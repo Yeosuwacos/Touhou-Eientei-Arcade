@@ -10,6 +10,7 @@
 script = ExtResource("1_533uj")
 
 [node name="Char_Catcher" type="CharacterBody2D" parent="." unique_id=1533009607]
+visible = false
 position = Vector2(640, 640)
 
 [node name="Sprite2D" type="Sprite2D" parent="Char_Catcher" unique_id=1675195296]

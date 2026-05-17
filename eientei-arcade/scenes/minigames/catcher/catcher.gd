@@ -26,6 +26,7 @@ var playing = true
 @onready var win_lose = $Cnv_Screen/WinLose
 @onready var tickets_label = $Cnv_Screen/WinLose/Ctrl_EndScreen/Txt_TicketsWon
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
+@onready var char = $Char_Catcher
 
 func _ready():
 	set_physics_process(false)
@@ -37,6 +38,7 @@ func _ready():
 func start_game():
 	set_physics_process(true)
 	cnv_start.visible = false
+	char.visible = true
 	score = 0
 	misses = 0
 	time = DURATION

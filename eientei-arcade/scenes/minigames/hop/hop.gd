@@ -29,6 +29,8 @@ var is_playing = false
 @onready var end_image = $Cnv_Screen/WinLose/Ctrl_EndScreen/Img_EndImg
 @onready var jump_indicator = $Char_Hop/Jump_Power
 @onready var cnv_start = $Cnv_Start
+@onready var platform1 = $Obj_P_Start
+@onready var platform2 = $Obj_P_Start2
 
 #Initialization 
 func _ready():
@@ -39,6 +41,9 @@ func _ready():
 
 func start_game():
 	set_physics_process(true)
+	chara.visible = true
+	platform1.visible = true
+	platform2.visible = true
 	cnv_start.visible = false
 	chara.up_direction = Vector2.UP
 	chara.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
