@@ -57,6 +57,7 @@ layer = -1
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("3_yee0l")]
 visible = false
 z_index = 1
+current_scene = "res://scenes/minigames/catcher/Catcher.tscn"
 
 [node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=57855593]
 

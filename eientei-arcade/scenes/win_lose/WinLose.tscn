@@ -31,7 +31,7 @@ layout_mode = 2
 [node name="Img_EndImg" type="TextureRect" parent="Ctrl_EndScreen" unique_id=657762241]
 layout_mode = 2
 
-[node name="Btn_Back" type="Button" parent="." unique_id=1921030251]
+[node name="Ctrl_Buttons" type="VBoxContainer" parent="." unique_id=633109197]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -39,10 +39,18 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -22.5
-offset_top = -31.0
+offset_top = -40.0
 offset_right = 22.5
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Btn_Again" type="Button" parent="Ctrl_Buttons" unique_id=1408403150]
+layout_mode = 2
+text = "Play again"
+
+[node name="Btn_Back" type="Button" parent="Ctrl_Buttons" unique_id=1921030251]
+layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="Btn_Back" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="Ctrl_Buttons/Btn_Again" to="." method="_on_btn_again_pressed"]
+[connection signal="pressed" from="Ctrl_Buttons/Btn_Back" to="." method="_on_btn_back_pressed"]

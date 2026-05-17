@@ -37,6 +37,7 @@ layer = -1
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("2_r4iye")]
 visible = false
 z_index = 1
+current_scene = "res://scenes/minigames/memory/Memory.tscn"
 
 [node name="Cnv_Start" type="CanvasLayer" parent="." unique_id=1156715975]
 

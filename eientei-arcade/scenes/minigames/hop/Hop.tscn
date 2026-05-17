@@ -42,6 +42,7 @@ layer = -1
 [node name="WinLose" parent="Cnv_Screen" unique_id=1293454922 instance=ExtResource("3_xrnq4")]
 visible = false
 z_index = 1
+current_scene = "res://scenes/minigames/hop/Hop.tscn"
 
 [node name="Obj_P_Start" parent="." unique_id=461738765 instance=ExtResource("4_p61fi")]
 visible = false
