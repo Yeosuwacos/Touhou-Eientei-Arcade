@@ -32,6 +32,7 @@ func _ready():
 
 #Initialization 
 func start_game():
+	cup_array.visible = true
 	prize_img.visible = true
 	cnv_start.visible = false
 	randomize()

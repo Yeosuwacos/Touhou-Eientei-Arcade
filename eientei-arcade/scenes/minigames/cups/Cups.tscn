@@ -11,6 +11,7 @@ script = ExtResource("1_2jfjj")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=395905916]
 
 [node name="Ctrl_Cups" type="Control" parent="HUD" unique_id=77517438]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
