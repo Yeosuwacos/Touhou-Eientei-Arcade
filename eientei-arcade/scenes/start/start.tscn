@@ -11,19 +11,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_662lp")
 
-[node name="Btn_Start" type="Button" parent="." unique_id=635975712]
+[node name="Ctrl_Buttons" type="VBoxContainer" parent="." unique_id=1007926467]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 28.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Btn_Start" type="Button" parent="Ctrl_Buttons" unique_id=635975712]
+layout_mode = 2
 text = "Begin!"
 
-[connection signal="pressed" from="Btn_Start" to="." method="_on_btn_start_pressed"]
+[node name="Btn_Back" type="Button" parent="Ctrl_Buttons" unique_id=842503742]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="Ctrl_Buttons/Btn_Start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="Ctrl_Buttons/Btn_Back" to="." method="_on_btn_back_pressed"]
