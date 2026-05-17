@@ -2,6 +2,7 @@ extends MinigameBase
 
 #Constants
 const START = preload("res://scenes/start/start.tscn")
+const CARD = preload("res://scenes/minigames/memory/card/card.tscn")
 const CARD_SIZE = Vector2(160, 160)
 const T_MULT = 50
 
@@ -36,7 +37,7 @@ func start_game():
 	randomize()
 	cards.shuffle()
 	for card_id in cards:
-		var addedCard = Card.new()
+		var addedCard = CARD.instantiate()
 		addedCard.custom_minimum_size = CARD_SIZE
 		addedCard.size = CARD_SIZE
 		addedCard.number = card_id

@@ -2,6 +2,60 @@
 
 [ext_resource type="Script" uid="uid://l6brl3jbscx0" path="res://scenes/minigames/memory/card/card.gd" id="1_bs5nx"]
 
+[sub_resource type="Animation" id="Animation_bs5nx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1mwkx"]
+resource_name = "grow"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nri4t"]
+resource_name = "shrink"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mwkx"]
+_data = {
+&"RESET": SubResource("Animation_bs5nx"),
+&"grow": SubResource("Animation_1mwkx"),
+&"shrink": SubResource("Animation_nri4t")
+}
+
 [node name="Card" type="TextureButton" unique_id=1833964484]
 custom_minimum_size = Vector2(100, 100)
 anchors_preset = 8
@@ -17,3 +71,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 5
 script = ExtResource("1_bs5nx")
+
+[node name="Flip" type="AnimationPlayer" parent="." unique_id=2001180512]
+libraries/ = SubResource("AnimationLibrary_1mwkx")
