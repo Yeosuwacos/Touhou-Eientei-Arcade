@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c040kfj1d0a1r" path="res://scenes/options/options.gd" id="1_k07dm"]
 [ext_resource type="Texture2D" uid="uid://bv0wpp2ahx00t" path="res://assets/sprites/ui/game_covers/placeholder.png" id="1_ps8qi"]
+[ext_resource type="Script" uid="uid://beu5i124oaiw7" path="res://scenes/options/ctrl_bgm.gd" id="3_qw2mn"]
 
 [node name="Options" type="Control" unique_id=639307137]
 layout_mode = 3
@@ -33,19 +34,21 @@ grow_horizontal = 2
 text = "Options & Credits"
 
 [node name="Txt_Studio" type="Label" parent="." unique_id=2122136460]
-layout_mode = 0
-offset_left = 20.0
-offset_right = 122.0
+layout_mode = 1
+offset_right = 173.0
 offset_bottom = 23.0
 text = "A game by Studio MYA"
 
 [node name="Ctrl_Credits" type="VBoxContainer" parent="." unique_id=1253695060]
 custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_left = 20.0
-offset_top = 32.0
-offset_right = 122.0
-offset_bottom = 560.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -264.0
+offset_right = 102.0
+offset_bottom = 264.0
+grow_vertical = 2
 
 [node name="Ctrl_Yeo" type="VBoxContainer" parent="Ctrl_Credits" unique_id=1114645981]
 layout_mode = 2
@@ -98,6 +101,35 @@ layout_mode = 2
 texture = ExtResource("1_ps8qi")
 expand_mode = 4
 stretch_mode = 4
+
+[node name="Ctrl_Sound" type="VBoxContainer" parent="." unique_id=510100887]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Ctrl_BGM" type="HSlider" parent="Ctrl_Sound" unique_id=1598776708]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+script = ExtResource("3_qw2mn")
+
+[node name="Txt_BGM" type="Label" parent="Ctrl_Sound/Ctrl_BGM" unique_id=482809408]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 0
+offset_top = -27.0
+offset_right = 120.0
+offset_bottom = -4.0
+text = "Music: 100%"
+horizontal_alignment = 2
 
 [node name="Btn_Back" type="Button" parent="." unique_id=1500363963]
 layout_mode = 1

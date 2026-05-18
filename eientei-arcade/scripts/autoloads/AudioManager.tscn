@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c0kjpkti3hpqu"]
+
+[ext_resource type="Script" uid="uid://dronbgovbpqma" path="res://scripts/autoloads/AudioManager.gd" id="1_30jrd"]
+[ext_resource type="AudioStream" uid="uid://bg3i0fmfa06lj" path="res://assets/audio/bgm/menu.mp3" id="2_6xhac"]
+
+[node name="AudioManager" type="Node" unique_id=1905117704]
+script = ExtResource("1_30jrd")
+
+[node name="Menu" type="AudioStreamPlayer" parent="." unique_id=1655687488]
+stream = ExtResource("2_6xhac")
+autoplay = true
+bus = &"BGM"
+parameters/looping = true

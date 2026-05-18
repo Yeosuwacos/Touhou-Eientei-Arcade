@@ -56,9 +56,6 @@ func _physics_process(delta: float):
 	var plat = _current_platform()
 	if plat != null and chara.is_on_floor():
 		chara.position.x -= p_speed * delta * (1 + scaling)
-		
-		if plat.is_in_group("floor"):
-			finish_game()
 	
 	#Jump system
 	if Input.is_action_pressed("jump") and chara.is_on_floor():
