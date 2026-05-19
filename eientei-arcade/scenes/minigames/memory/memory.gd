@@ -89,6 +89,10 @@ func check_match():
 	sel_cards.clear()
 	if tries == 0 or s_matches == 5:
 		await get_tree().create_timer(1.0).timeout
+		for card in card_holder.get_children():
+			if card.flipped == false:
+				card.flip()
+		await get_tree().create_timer(2.0).timeout
 		finish_game()
 
 #Game end
