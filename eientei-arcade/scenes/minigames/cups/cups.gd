@@ -47,6 +47,7 @@ func start_game():
 	
 	#Cup array
 	var cup_list = [prize_cup,empty_cup_1,empty_cup_2]
+	await get_tree().create_timer(1.0).timeout
 	await move_cups("down")
 	
 	#Shuffling sequence
