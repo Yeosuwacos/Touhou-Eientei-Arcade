@@ -30,7 +30,7 @@ offset_bottom = 32.0
 fill_mode = 3
 show_percentage = false
 
-[node name="Hbx_Floor" type="StaticBody2D" parent="." unique_id=919377061]
+[node name="Hbx_Floor" type="Area2D" parent="." unique_id=2018764248]
 position = Vector2(0, 640)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hbx_Floor" unique_id=2085849678]
@@ -65,3 +65,5 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.8117647, 0.6117647, 0.627451, 1)
+
+[connection signal="body_entered" from="Hbx_Floor" to="." method="_on_hbx_floor_body_entered"]

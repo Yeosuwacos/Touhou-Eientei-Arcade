@@ -31,6 +31,7 @@ var is_playing = false
 @onready var cnv_start = $Cnv_Start
 @onready var platform1 = $Obj_P_Start
 @onready var platform2 = $Obj_P_Start2
+@onready var p_floor = $Hbx_Floor
 
 #Initialization 
 func _ready():
@@ -41,6 +42,7 @@ func _ready():
 
 func start_game():
 	set_physics_process(true)
+	p_floor.position.y = get_viewport().size.y
 	chara.visible = true
 	platform1.visible = true
 	platform2.visible = true
@@ -78,12 +80,9 @@ func _physics_process(delta: float):
 		chara.velocity.x = 0
 		chara.velocity.y = 0
 
-	#Lose conditions
+	#Lose condition 1
 	chara.position.x = clamp(chara.position.x, 50, get_window().size.x - 50)
 	if chara.position.x <= 50:
-		finish_game()
-		
-	if chara.position.y > get_window().size.y - Y_GAME_OVER:
 		finish_game()
 		
 	#Platform spawner
@@ -97,6 +96,11 @@ func _physics_process(delta: float):
 		platform_spawn -= scaling/2
 		tickets += 10
 		_add_platform()
+
+#Lose condition 2
+func _on_hbx_floor_body_entered(body):
+	if body.name == "Char_Hop":
+		finish_game()
 
 #Platforms
 func _add_platform():
