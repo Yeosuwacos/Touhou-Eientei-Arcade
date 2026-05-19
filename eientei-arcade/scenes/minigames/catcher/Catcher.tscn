@@ -22,15 +22,10 @@ shape = SubResource("RectangleShape2D_533uj")
 [node name="T_Spawner" type="Timer" parent="." unique_id=524022780]
 wait_time = 1.2
 
-[node name="T_Game" type="Timer" parent="." unique_id=1297766794]
-wait_time = 60.0
+[node name="T_Dash" type="Timer" parent="." unique_id=1769799954]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1330729640]
-
-[node name="Txt_Time" type="Label" parent="HUD" unique_id=713697370]
-offset_top = 8.0
-offset_right = 1.0
-offset_bottom = 31.0
+visible = false
 
 [node name="Txt_Score" type="Label" parent="HUD" unique_id=1597530003]
 anchors_preset = 5
@@ -48,6 +43,10 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
+
+[node name="Img_Dash" type="ColorRect" parent="HUD" unique_id=925152579]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="BambooContainer" type="Node2D" parent="." unique_id=343382484]
 
@@ -74,3 +73,4 @@ grow_vertical = 2
 color = Color(0.8117647, 0.6117647, 0.627451, 1)
 
 [connection signal="timeout" from="T_Spawner" to="." method="_on_t_spawner_timeout"]
+[connection signal="timeout" from="T_Dash" to="." method="_on_t_dash_timeout"]
